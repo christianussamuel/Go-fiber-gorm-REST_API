@@ -8,5 +8,16 @@ import (
 )
 
 func UserRoute(app *fiber.App) {
+	//userprofile
 	app.Post("/api/profile", controllers.CreateUser)
+	app.Get("/api/profile/:profileCode", controllers.GetAUser)
+	app.Put("api/profile/:profileCode", controllers.EditAUser)
+
+	//workingexp
+	app.Get("/api/working-experience/:profileCode", controllers.GetWorkingExperience)
+	app.Put("/api/working-experience/:profileCode", controllers.EditWorkingExperience)
+
+	//employment
+	app.Post("/api/employment/:profileCode", controllers.CreateEmployment)
+
 }

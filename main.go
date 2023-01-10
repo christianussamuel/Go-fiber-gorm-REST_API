@@ -12,7 +12,6 @@ func main() {
 	app := fiber.New()
 
 	configs.ConnectDB()
-	routes.RouteInit(app)
 	routes.UserRoute(app)
 
 	app.Listen(":6000")
